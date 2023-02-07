@@ -1,0 +1,30 @@
+@import 'src/styles/variables';
+
+.button {
+  padding: 8px 16px;
+  background-color: $white;
+  color: $grey-1c;
+  font-size: 16px;
+  border: 1px solid $white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color $transition, background-color $transition, border-color $transition;
+
+  &:hover {
+    color: $white;
+    background-color: $orange-fa;
+    border-color: $orange-fa;
+  }
+
+  &--disabled {
+    background-color: $grey-b9;
+    border-color: $grey-b9;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: $grey-b9;
+      border-color: $grey-b9;
+      color: $grey-1c;
+    }
+  }
+}
