@@ -1,0 +1,39 @@
+@import "src/styles/variables";
+
+$border:  4px solid $orange-fa;
+
+.error-block {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $grey-36;
+  border-radius: 10px;
+  border: $border;
+  color: $white;
+
+  &__name {
+    font-size: 24px;
+  }
+
+  &__message {
+    margin-top: 16px;
+    font-size: 20px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: $border;
+    background-color: $red-e8;
+  }
+}

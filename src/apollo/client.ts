@@ -1,8 +1,4 @@
-import {
-    ApolloClient, InMemoryCache,
-} from '@apollo/client'
+import { ApolloClient, InMemoryCache } from '@apollo/client'
 
-export default new ApolloClient({
-    uri: 'https://rickandmortyapi.com/graphql',
-    cache: new InMemoryCache(),
-})
+export default new ApolloClient({ uri: 'https://rickandmortyapi.com/graphql',
+    cache: new InMemoryCache() })

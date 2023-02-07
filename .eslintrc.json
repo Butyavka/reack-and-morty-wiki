@@ -40,7 +40,6 @@
         "no-multiple-empty-lines": ["warn", { "max": 1 }],
         "no-trailing-spaces": "warn",
         "no-whitespace-before-property": "error",
-        "object-curly-newline": ["warn", { "minProperties": 2 }],
         "object-curly-spacing": ["warn", "always", { "arraysInObjects":  false, "objectsInObjects": false }],
         "operator-linebreak": ["warn", "before"],
         "padded-blocks": ["warn", "never"],

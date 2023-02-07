@@ -1,0 +1,70 @@
+@import 'src/styles/variables.scss';
+
+.character-card {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  background-color: $grey-36;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__img-box {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+
+    &-indicator {
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin-right: 4px;
+      border-radius: 50%;
+
+      &--Alive {
+        background-color: $green-04;
+      }
+
+      &--Dead {
+        background-color: $red-e8;
+      }
+
+      &--unknown {
+        background-color: $grey-7a;
+      }
+    }
+  }
+
+  &__info {
+    margin: 8px 0;
+
+    &-block {
+      padding: 16px;
+      color: $white;
+    }
+
+    &-name {
+      margin: 4px 0;
+      color: $grey-7a;
+    }
+
+    &-value {
+      cursor: pointer;
+      transition: color $transition;
+
+      &:hover {
+        color: $orange-fa;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}

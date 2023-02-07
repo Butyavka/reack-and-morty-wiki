@@ -12,7 +12,10 @@ const CHARACTERS = gql `
           name
           image
           status
-          gender
+          species
+          location {
+            name
+          }
           origin {
             name
           }
