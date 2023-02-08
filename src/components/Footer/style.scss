@@ -1,0 +1,21 @@
+@import 'src/styles/variables';
+
+.footer {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $grey-36;
+  font-size: 18px;
+  color: $grey-b9;
+
+  &__link {
+    margin-left: 4px;
+    color: $grey-b9;
+    transition: color $transition;
+
+    &:hover {
+      color: $orange-fa;
+    }
+  }
+}
