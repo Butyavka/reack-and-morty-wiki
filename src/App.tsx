@@ -4,11 +4,12 @@ import {
     createBrowserRouter, RouterProvider,
 } from 'react-router-dom'
 import Main from './pages/Main'
+import Layout from './components/Layout'
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main />,
+        element: <Layout><Main /></Layout>,
     },
 ])
 
