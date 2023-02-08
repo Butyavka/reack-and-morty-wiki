@@ -3,7 +3,7 @@ import Characters from '../../components/Characters'
 
 const Main = () => {
     return (
-        <div>
+        <div className="page">
             <Characters/>
         </div>
     )
