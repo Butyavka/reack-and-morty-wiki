@@ -5,17 +5,25 @@ import {
 } from 'react-router-dom'
 import Main from './pages/Main'
 import Layout from './components/Layout'
+import CharacterDetail from './pages/CharacterDetail'
+import { ROUTES } from './constants/routes'
 
 const router = createBrowserRouter([
     {
-        path: '/',
-        element: <Layout><Main /></Layout>,
+        path: ROUTES.MAIN,
+        element: <Main />,
+    },
+    {
+        path: ROUTES.CHARACTER_DETAIL,
+        element: <CharacterDetail />,
     },
 ])
 
 function App() {
     return (
-        <RouterProvider router={ router } />
+        <Layout>
+            <RouterProvider router={ router } />
+        </Layout>
     )
 }
 

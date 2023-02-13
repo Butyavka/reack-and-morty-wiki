@@ -1,23 +1,14 @@
 import React, { FC } from 'react'
 import './style.scss'
 import block from '../../helpers/bem'
-
-// type gender = 'Female' | 'Male' | 'Genderless' | 'unknown'
-type status = 'Alive' | 'Dead' | 'unknown'
-
-export interface ICharacterCard {
-    id: string
-    name: string
-    image: string
-    status: status
-    location: { name: string }
-    origin: { name: string }
-    species: string
-}
+import { Link } from 'react-router-dom'
+import { PATHS } from '../../constants/paths'
+import { CharacterCard as ICharacterCard } from '../../types/character'
 
 const b = block('character-card')
 
 const CharacterCard: FC<ICharacterCard> = ({
+    id,
     name,
     image,
     status,
@@ -31,7 +22,12 @@ const CharacterCard: FC<ICharacterCard> = ({
                 <img className={ b('img') } src={ image } alt={ name } />
             </div>
             <div className={ b('info-block') }>
-                <div className={ b('name') }>{name}</div>
+                <Link
+                    to={ PATHS.CHARACTER_DETAIL(id) }
+                    className={ b('name').mix(b('link')) }
+                >
+                    {name}
+                </Link>
                 <div className={ b('status') }>
                     <span className={ b('status-indicator', { [status]: !!status }) }/>
                     {status} - {species}

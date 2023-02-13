@@ -24,4 +24,31 @@ const CHARACTERS = gql `
     }
 `
 
-export { CHARACTERS }
+const CHARACTER = gql `
+    query GET_CHARACTER($id: ID!) {
+      character(id:$id) {
+        name
+        status
+        species
+        type
+        gender
+        origin {
+          name
+          id
+        }
+        location {
+          name
+          id
+        }
+        image
+        episode {
+          id
+          name
+          air_date
+          episode
+        }
+      }
+    }
+`
+
+export { CHARACTERS, CHARACTER }

@@ -51,20 +51,21 @@
       margin: 4px 0;
       color: $grey-7a;
     }
-
-    &-value {
-      cursor: pointer;
-      transition: color $transition;
-
-      &:hover {
-        color: $orange-fa;
-      }
-    }
   }
 
   &__name {
     margin-bottom: 10px;
     font-size: 24px;
     font-weight: 700;
+  }
+
+  &__link {
+    color: $white;
+    cursor: pointer;
+    transition: color $transition;
+
+    &:hover {
+      color: $orange-fa;
+    }
   }
 }

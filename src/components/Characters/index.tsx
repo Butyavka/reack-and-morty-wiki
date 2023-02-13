@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import './style.scss'
-import CharacterCard, { ICharacterCard } from '../CharacterCard'
+import CharacterCard from '../CharacterCard'
+import { CharacterCard as ICharacterCard } from '../../types/character'
 import Loading from '../UI/Loading'
 import { ApolloError } from '@apollo/client'
 import Error from '../Error'

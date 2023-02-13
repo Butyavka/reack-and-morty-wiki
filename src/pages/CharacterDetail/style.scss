@@ -1,0 +1,74 @@
+@import "src/styles/variables";
+
+.character-detail {
+
+  &__container {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: $grey-36;
+    border-radius: 10px;
+  }
+
+  &__block {
+    display: flex;
+    column-gap: 40px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      row-gap: 14px;
+      color: $white;
+    }
+
+    &-name {
+      margin: 4px 0;
+      color: $grey-7a;
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+
+    &-indicator {
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin-right: 4px;
+      border-radius: 50%;
+
+      &--Alive {
+        background-color: $green-04;
+      }
+
+      &--Dead {
+        background-color: $red-e8;
+      }
+
+      &--unknown {
+        background-color: $grey-7a;
+      }
+    }
+  }
+
+  &__episode {
+    margin-top: 40px;
+
+    &-header {
+      text-align: center;
+      color: $white;
+    }
+  }
+}
