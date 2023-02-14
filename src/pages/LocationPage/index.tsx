@@ -1,4 +1,5 @@
 import React from 'react'
+import './style.scss'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { LOCATION } from '../../apollo/locations'
@@ -36,11 +37,28 @@ const LocationPage = () => {
                         <span className={ b('info-name') }>
                             Name:
                         </span>
+                        <span className={ b('name') }>
+                            { name }
+                        </span>
+                    </div>
+                    <div className={ b('info-block') }>
+                        <span className={ b('info-name') }>
+                            Type:
+                        </span>
                         <span className={ b('info-value') }>
-                            { name}
+                            { type }
+                        </span>
+                    </div>
+                    <div className={ b('info-block') }>
+                        <span className={ b('info-name') }>
+                            Dimension:
+                        </span>
+                        <span className={ b('info-value') }>
+                            { dimension }
                         </span>
                     </div>
                 </div>
+                <h2 className={ b('header') }>Location characters:</h2>
                 <Characters characters={ characters } loading={ false } error={ null }/>
             </div>
         </div>
