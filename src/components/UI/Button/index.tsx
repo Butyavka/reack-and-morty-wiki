@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import './style.scss'
-import block from '../../../helpers/bem'
+import { block } from '../../../helpers/bem'
 
 const b = block('button')
 

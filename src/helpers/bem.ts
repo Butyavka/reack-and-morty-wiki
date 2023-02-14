@@ -1,6 +1,6 @@
 import { setup } from 'bem-cn'
 
-export default setup({
+export const block = setup({
     el: '__',
     mod: '--',
     modValue: '-',

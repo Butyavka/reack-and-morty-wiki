@@ -1,0 +1,31 @@
+@import "src/styles/variables";
+
+.location {
+  &__container {
+    padding-top: 30px;
+  }
+
+  &__header {
+    margin: 20px 0;
+    color: $white;
+    font-size: 26px;
+  }
+
+  &__name {
+    font-weight: 700;;
+  }
+
+  &__info {
+    color: $white;
+    font-size: 20px;
+
+    &-block {
+      display: flex;
+      column-gap: 10px;
+    }
+
+    &-name {
+      color: $grey-7a
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import portal from '../../../assets/images/portal.png'
 import './style.scss'
-import block from '../../../helpers/bem'
+import { block } from '../../../helpers/bem'
 
 const b = block('loading')
 

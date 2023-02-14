@@ -1,17 +1,42 @@
 @import 'src/styles/variables.scss';
 
 .character-card {
-  max-width: 600px;
-  width: 100%;
   display: flex;
   background-color: $grey-36;
   border-radius: 10px;
   overflow: hidden;
 
+  @media (max-width: $desktop) {
+    flex-direction: column;
+  }
+
+  @media (max-width: $desktop-m) {
+    flex-direction: row;
+  }
+
+  @media (max-width: $tablet-m) {
+    flex-direction: column;
+  }
+
   &__img-box {
     width: 250px;
     height: 250px;
     overflow: hidden;
+
+    @media (max-width: $desktop) {
+      width: auto;
+      height: auto;
+    }
+
+    @media (max-width: $desktop-m) {
+      width: 250px;
+      height: 250px;
+    }
+
+    @media (max-width: $tablet-m) {
+      width: auto;
+      height: auto;
+    }
   }
 
   &__status {
@@ -54,9 +79,26 @@
   }
 
   &__name {
+    max-width: 280px;
     margin-bottom: 10px;
     font-size: 24px;
     font-weight: 700;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @media (max-width: $desktop-m) {
+      max-width: 400px;
+    }
+
+    @media (max-width: $tablet) {
+      max-width: 250px;
+    }
+
+    @media (max-width: $tablet-m) {
+      max-width: 300px;
+    }
   }
 
   &__link {
