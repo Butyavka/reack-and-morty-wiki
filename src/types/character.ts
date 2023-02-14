@@ -24,8 +24,8 @@ interface CharacterCard {
     name: string
     image: string
     status: status
-    location: { name: string }
-    origin: { name: string }
+    location: { name: string, id: string }
+    origin: { name: string, id: string }
     species: string
 }
 

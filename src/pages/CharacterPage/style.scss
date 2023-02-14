@@ -71,4 +71,14 @@
       color: $white;
     }
   }
+
+  &__link {
+    color: $white;
+    cursor: pointer;
+    transition: color $transition;
+
+    &:hover {
+      color: $orange-fa;
+    }
+  }
 }

@@ -15,9 +15,11 @@ const CHARACTERS = gql `
           species
           location {
             name
+            id
           }
           origin {
             name
+            id
           }
         }
       }

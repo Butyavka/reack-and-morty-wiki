@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import './style.scss'
-import block from '../../helpers/bem'
+import { block } from '../../helpers/bem'
 import { Link } from 'react-router-dom'
 import { PATHS } from '../../constants/paths'
 import { CharacterCard as ICharacterCard } from '../../types/character'
@@ -23,8 +23,9 @@ const CharacterCard: FC<ICharacterCard> = ({
             </div>
             <div className={ b('info-block') }>
                 <Link
-                    to={ PATHS.CHARACTER_DETAIL(id) }
+                    to={ PATHS.CHARACTER_PAGE(id) }
                     className={ b('name').mix(b('link')) }
+                    title={ name }
                 >
                     {name}
                 </Link>
@@ -34,11 +35,21 @@ const CharacterCard: FC<ICharacterCard> = ({
                 </div>
                 <div className={ b('info') }>
                     <div className={ b('info-name') }>Last known location:</div>
-                    <div className={ b('info-value') }>{location.name}</div>
+                    <Link
+                        to={ PATHS.LOCATION_PAGE(location.id) }
+                        className={ b('info-value').mix(b('link')) }
+                    >
+                        {location.name}
+                    </Link>
                 </div>
                 <div className={ b('info') }>
                     <div className={ b('info-name') }>Place of origin:</div>
-                    <div className={ b('info-value') }>{origin.name}</div>
+                    <Link
+                        to={ PATHS.LOCATION_PAGE(origin.id) }
+                        className={ b('info-value').mix(b('link')) }
+                    >
+                        {origin.name}
+                    </Link>
                 </div>
             </div>
         </li>

@@ -2,16 +2,17 @@ import React from 'react'
 import { useQuery } from '@apollo/client'
 import { CHARACTER } from '../../apollo/rickAndMorty'
 import Loading from '../../components/UI/Loading'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Error from '../../components/Error'
-import block from '../../helpers/bem'
+import { block } from '../../helpers/bem'
 import './style.scss'
 import CharacterContainer from './CharacterContainer'
 import { Character as ICharacter } from '../../types/character'
+import { PATHS } from '../../constants/paths'
 
 const b = block('character-detail')
 
-const CharacterDetail = () => {
+const CharacterPage = () => {
     const { id } = useParams()
     const { loading, data, error } = useQuery(CHARACTER, { variables: { id }})
     const character: ICharacter = data?.character
@@ -55,11 +56,21 @@ const CharacterDetail = () => {
                             )}
                             <div className={ b('info') }>
                                 <div className={ b('info-name') }>Last known location:</div>
-                                <div className={ b('info-value') }>{character.location.name}</div>
+                                <Link
+                                    to={ PATHS.LOCATION_PAGE(character.location.id) }
+                                    className={ b('info-value').mix(b('link')) }
+                                >
+                                    {character.location.name}
+                                </Link>
                             </div>
                             <div className={ b('info') }>
                                 <div className={ b('info-name') }>Place of origin:</div>
-                                <div className={ b('info-value') }>{character.origin.name}</div>
+                                <Link
+                                    to={ PATHS.LOCATION_PAGE(character.origin.id) }
+                                    className={ b('info-value').mix(b('link')) }
+                                >
+                                    {character.origin.name}
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -72,4 +83,4 @@ const CharacterDetail = () => {
     )
 }
 
-export default CharacterDetail
+export default CharacterPage
