@@ -1,0 +1,25 @@
+@import "src/styles/variables";
+
+.header {
+  margin-bottom: 30px;
+  background-color: $grey-1c;
+  box-shadow: 1px 3px 8px $blue-005;
+
+  &__container {
+    padding: 20px;
+  }
+
+  &__logo {
+    font-size: 30px;
+    color: $blue-00b;
+    font-weight: 700;
+    transition: text-shadow $transition;
+
+    &:hover {
+      text-shadow: 1px 0 1px $yellow-c6,
+      0 1px 1px $yellow-c6,
+      -1px 0 1px $yellow-c6,
+      0 -1px 1px $yellow-c6;
+    }
+  }
+}
