@@ -12,23 +12,21 @@ import LocationPage from './pages/LocationPage'
 const router = createBrowserRouter([
     {
         path: ROUTES.MAIN,
-        element: <MainPage />,
+        element: <Layout><MainPage /></Layout>,
     },
     {
         path: ROUTES.CHARACTER_PAGE,
-        element: <CharacterPage />,
+        element: <Layout><CharacterPage /></Layout>,
     },
     {
         path: ROUTES.LOCATION_PAGE,
-        element: <LocationPage />,
+        element: <Layout><LocationPage /></Layout>,
     },
 ])
 
 function App() {
     return (
-        <Layout>
-            <RouterProvider router={ router } />
-        </Layout>
+        <RouterProvider router={ router } />
     )
 }
 

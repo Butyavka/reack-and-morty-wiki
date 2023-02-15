@@ -1,6 +1,7 @@
 @import 'src/styles/variables';
 
 .footer {
+  margin-top: 30px;
   padding: 30px 20px;
   display: flex;
   justify-content: center;
@@ -15,7 +16,7 @@
     transition: color $transition;
 
     &:hover {
-      color: $orange-fa;
+      color: $blue-00b;
     }
   }
 }
