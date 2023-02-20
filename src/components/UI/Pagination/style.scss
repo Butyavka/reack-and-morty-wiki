@@ -1,0 +1,18 @@
+@import 'src/styles/variables.scss';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  @media (max-width: $tablet) {
+    gap: 8px;
+  }
+  
+  & .button {
+    @media (max-width: $tablet) {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+}

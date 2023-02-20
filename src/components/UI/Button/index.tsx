@@ -7,14 +7,16 @@ const b = block('button')
 interface IButton {
     children?: React.ReactNode
     disabled?: boolean
-    className?: string[]
+    className?: string[] | string
+    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const Button: FC<IButton> = ({ children, disabled, className = []}) => {
+const Button: FC<IButton> = ({ children, disabled, className = [], onClick }) => {
     return (
         <button
             className={ b({ disabled }).mix(className) }
             disabled={ disabled }
+            onClick={ onClick }
         >
             {children}
         </button>
