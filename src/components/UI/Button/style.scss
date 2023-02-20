@@ -27,4 +27,10 @@
       color: $grey-1c;
     }
   }
+
+  &.active {
+    color: $white;
+    background-color: $blue-00b;
+    border-color: $blue-00b;
+  }
 }

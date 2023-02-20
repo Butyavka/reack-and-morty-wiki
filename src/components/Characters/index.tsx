@@ -10,8 +10,8 @@ import { block } from '../../helpers/bem'
 const b = block('characters-block')
 
 interface ICharacters {
-    characters: ICharacterCard[];
-    loading: boolean;
+    characters: ICharacterCard[]
+    loading: boolean
     error: ApolloError | null
 }
 
