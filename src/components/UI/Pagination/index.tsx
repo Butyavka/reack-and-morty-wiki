@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react'
 import './style.scss'
 import { block } from '../../../helpers/bem'
 import Button from '../Button'
+import { scrollTop } from '../../../helpers/scrollTop'
 
 const b = block('pagination')
 
@@ -29,11 +30,13 @@ const Pagination: FC<IPagination> = ({ total, onChange, current = 1, className }
     const buttonHandler = (buttonId: number) => {
         setCurrentPage(buttonId)
         onChange(buttonId)
+        scrollTop()
     }
 
     const navigationHandler = (number: number) => {
         setCurrentPage(currentPage + number)
         onChange(currentPage + number)
+        scrollTop()
     }
 
     return (
