@@ -4,6 +4,7 @@ import { block } from '../../helpers/bem'
 import { Link } from 'react-router-dom'
 import { PATHS } from '../../constants/paths'
 import { CharacterCard as ICharacterCard } from '../../types/character'
+import { scrollTop } from '../../helpers/scrollTop'
 
 const b = block('character-card')
 
@@ -26,6 +27,7 @@ const CharacterCard: FC<ICharacterCard> = ({
                     to={ PATHS.CHARACTER_PAGE(id) }
                     className={ b('name').mix(b('link')) }
                     title={ name }
+                    onClick={ scrollTop }
                 >
                     {name}
                 </Link>
@@ -38,6 +40,7 @@ const CharacterCard: FC<ICharacterCard> = ({
                     <Link
                         to={ PATHS.LOCATION_PAGE(location.id) }
                         className={ b('info-value').mix(b('link')) }
+                        onClick={ scrollTop }
                     >
                         {location.name}
                     </Link>
@@ -47,6 +50,7 @@ const CharacterCard: FC<ICharacterCard> = ({
                     <Link
                         to={ PATHS.LOCATION_PAGE(origin.id) }
                         className={ b('info-value').mix(b('link')) }
+                        onClick={ scrollTop }
                     >
                         {origin.name}
                     </Link>
