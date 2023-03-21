@@ -1,3 +1,5 @@
+import { Episode } from './episode'
+
 type gender = 'Female' | 'Male' | 'Genderless' | 'unknown'
 type status = 'Alive' | 'Dead' | 'unknown'
 
@@ -11,12 +13,7 @@ interface Character {
     type: string
     location: { name: string, id: string }
     origin: { name: string, id: string }
-    episode: {
-        id: string
-        name: string
-        air_date: string
-        episode: string
-    }
+    episode: Episode[]
 }
 
 interface CharacterCard {

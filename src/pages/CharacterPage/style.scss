@@ -63,12 +63,24 @@
     }
   }
 
-  &__episode {
+  &__episodes {
     margin-top: 40px;
 
     &-header {
+      margin-bottom: 30px;
       text-align: center;
       color: $white;
+    }
+
+    &-count {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
     }
   }
 
