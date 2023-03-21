@@ -46,7 +46,7 @@ const CHARACTER = gql `
         episode {
           id
           name
-          air_date
+          airDate:air_date
           episode
         }
       }

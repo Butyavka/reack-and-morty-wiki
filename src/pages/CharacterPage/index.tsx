@@ -9,6 +9,7 @@ import './style.scss'
 import CharacterContainer from './CharacterContainer'
 import { Character as ICharacter } from '../../types/character'
 import { PATHS } from '../../constants/paths'
+import Episode from '../../components/Episode'
 
 const b = block('character-detail')
 
@@ -74,8 +75,22 @@ const CharacterPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={ b('episode') }>
-                        <h2 className={ b('episode-header') }>Episodes in which this character appeared:</h2>
+                    <div className={ b('episodes') }>
+                        <h2 className={ b('episodes-header') }>
+                            Episodes in which this character appeared
+                            <span className={ b('episodes-count') }>({character.episode.length})</span>:
+                        </h2>
+                        <div className={ b('episodes-box') }>
+                            {character.episode.map(item => (
+                                <Episode
+                                    key={ item.id }
+                                    id={ item.id }
+                                    airDate={ item.airDate }
+                                    episode={ item.episode }
+                                    name={ item.name }
+                                />
+                            ))}
+                        </div>
                     </div>
                 </>
             ) : <div>Not data</div>}
