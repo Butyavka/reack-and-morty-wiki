@@ -2,17 +2,18 @@ import React from 'react'
 import './style.scss'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
-import { LOCATION } from '../../apollo/locations'
+import { EPISODE } from '../../apollo/episode'
 import Loading from '../../components/UI/Loading'
 import Error from '../../components/Error'
 import Characters from '../../components/Characters'
 import { block } from '../../helpers/bem'
 
-const b = block('location')
+const b = block('episode-page')
 
-const LocationPage = () => {
+const EpisodePage = () => {
     const { id } = useParams()
-    const { loading, data, error } = useQuery(LOCATION, { variables: { id }})
+
+    const { loading, data, error } = useQuery(EPISODE, { variables: { id }})
 
     if (loading) return (
         <div className="page">
@@ -30,7 +31,7 @@ const LocationPage = () => {
         </div>
     )
 
-    const { characters, name, type, dimension } = data.location
+    const { characters, airDate, episode, name } = data.episode
 
     return (
         <div className="page">
@@ -46,26 +47,26 @@ const LocationPage = () => {
                     </div>
                     <div className={ b('info-block') }>
                         <span className={ b('info-name') }>
-                            Type:
+                            Episode:
                         </span>
-                        <span className={ b('info-value') }>
-                            { type }
+                        <span className={ b('info') }>
+                            { episode }
                         </span>
                     </div>
                     <div className={ b('info-block') }>
                         <span className={ b('info-name') }>
-                            Dimension:
+                            Air date:
                         </span>
                         <span className={ b('info-value') }>
-                            { dimension }
+                            { airDate }
                         </span>
                     </div>
                 </div>
-                <h2 className={ b('header') }>Location characters:</h2>
+                <h2 className={ b('header') }>Episode characters:</h2>
                 <Characters characters={ characters } loading={ false } error={ null }/>
             </div>
         </div>
     )
 }
 
-export default LocationPage
+export default EpisodePage

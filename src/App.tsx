@@ -8,6 +8,7 @@ import { ROUTES } from './constants/routes'
 import MainPage from './pages/MainPage'
 import CharacterPage from './pages/CharacterPage'
 import LocationPage from './pages/LocationPage'
+import EpisodePage from './pages/EpisodePage'
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
     {
         path: ROUTES.LOCATION_PAGE,
         element: <Layout><LocationPage /></Layout>,
+    },
+    {
+        path: ROUTES.EPISODE_PAGE,
+        element: <Layout><EpisodePage /></Layout>,
     },
 ])
 
